@@ -88,3 +88,9 @@ SELECT employee
 FROM employees
 where salary = (SELECT MAX(salary) from employees);
 ```
+Question 15: Write an SQL query to find the employees who have been with the company for more than 5 years. Assume there's a column named "join_date" in the "employees" table representing the date when each employee joined the company.
+```
+SELECT employee
+FROM employees
+WHERE DATEDIFF(CURRENT_DATE(), join_date) / 365 > 5;
+```
