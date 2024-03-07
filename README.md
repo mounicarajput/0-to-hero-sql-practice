@@ -68,4 +68,17 @@ SELECT employee
 FROM employees
 WHERE YEAR(join_date) = 2023;
 ```
-
+Question 12: Write an SQL query to find the employees who have a salary greater than the average salary of all employees.
+```
+SELECT employee, salary
+FROM employees
+WHERE salary > (SELECT AVG(salary) FROM employees);
+```
+Question 13 : Write an SQL query to find the department with the highest average salary.
+```
+SELECT department, AVG(salary) as avg_salary
+FROM employees
+GROUP BY department
+ORDER BY avg_salary DESC
+LIMIT 1;
+```
