@@ -82,3 +82,9 @@ GROUP BY department
 ORDER BY avg_salary DESC
 LIMIT 1;
 ```
+Question 14: Write an SQL query to find the employees who have the same salary as the highest-paid employee.
+```
+SELECT employee
+FROM employees
+where salary = (SELECT MAX(salary) from employees);
+```
