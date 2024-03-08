@@ -94,3 +94,22 @@ SELECT employee
 FROM employees
 WHERE DATEDIFF(CURRENT_DATE(), join_date) / 365 > 5;
 ```
+Question 16: Write an SQL query to find the department(s) with the highest number of employees.
+```
+SELECT department , COUNT(employee) as num_of_employees
+FROM employees
+GROUP BY department
+ORDER BY num_of_employees DESC
+LIMIT 1;
+```
+Question 17: Write an SQL query to find the employee(s) who earn(s) the highest salary in each department.
+```
+SELECT department, employee, salary
+FROM employees
+WHERE (department, salary) IN (
+    SELECT department, MAX(salary) AS max_salary
+    FROM employees
+    GROUP BY department
+);
+```
+
