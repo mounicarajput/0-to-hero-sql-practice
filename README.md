@@ -127,5 +127,10 @@ FROM employees e1
 JOIN employees e2 ON e1.title = e2.title AND e1.salary=e2.salary
 WHERE e1.employee<>e2.employee;
 ```
-
-
+Question 20: Write an SQL query to find the employees who have a salary that is higher than the salary of all managers. 
+Assume there's a column named "job_title" in the "employees" table indicating the job title, and managers have the job title "Manager".
+```
+SELECT employee, salary
+FROM employees
+WHERE salary > ( SELECT MAX(salary) FROM employees WHERE job_title ="Manager");
+```
