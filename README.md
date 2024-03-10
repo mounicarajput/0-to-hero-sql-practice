@@ -112,4 +112,20 @@ WHERE (department, salary) IN (
     GROUP BY department
 );
 ```
+Question 18: Write an SQL query to find the departments where the average salary is greater than $50,000.
+```
+SELECT department, AVG(salary) AS avg_salary
+FROM employees
+GROUP BY department
+HAVING avg_salary > 50000
+ORDER BY avg_salary;
+```
+Question 19: Write an SQL query to find the employees who have the same job title and salary as another employee.
+```
+SELECT e1.employee, e1.title, e1.salary
+FROM employees e1
+JOIN employees e2 ON e1.title = e2.title AND e1.salary=e2.salary
+WHERE e1.employee<>e2.employee;
+```
+
 
