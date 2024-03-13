@@ -134,3 +134,14 @@ SELECT employee, salary
 FROM employees
 WHERE salary > ( SELECT MAX(salary) FROM employees WHERE job_title ="Manager");
 ```
+Question 21: Write an SQL query to find the employees who have the same salary as the employee with the second-highest salary in the company.
+```
+SELECT employee, salary
+FROM employees
+WHERE salary = (
+    SELECT DISTINCT salary
+    FROM employees
+    ORDER BY salary DESC
+    LIMIT 1 OFFSET 1
+);
+```
