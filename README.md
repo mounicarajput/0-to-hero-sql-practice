@@ -145,3 +145,13 @@ WHERE salary = (
     LIMIT 1 OFFSET 1
 );
 ```
+Question 22: Write an SQL query to find the employees who have the lowest salary in each department
+```
+SELECT department, employee, salary
+FROM employees
+WHERE (department, salary) IN (
+    SELECT department, MIN(salary) AS min_salary
+    FROM employees
+    GROUP BY department
+);
+```
