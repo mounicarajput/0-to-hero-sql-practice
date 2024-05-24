@@ -156,3 +156,20 @@ WHERE (department, salary) IN (
 );
 ```
 
+Question 23: Write an SQL query to find the top 3 highest-paid employees in the company.
+```
+SELECT employee_id, employee_name, salary
+FROM employees
+ORDER BY salary DESC
+LIMIT 3;
+
+```
+
+Question 24: Write an SQL query to find the departments that have more than 10 employees.
+```
+SELECT department, COUNT(employee) AS num_of_employees
+FROM employees
+GROUP BY department
+HAVING num_of_employees > 10;
+
+```
