@@ -155,3 +155,4 @@ WHERE (department, salary) IN (
     GROUP BY department
 );
 ```
+
