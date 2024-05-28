@@ -165,11 +165,21 @@ LIMIT 3;
 
 ```
 
-Question 24: Write an SQL query to find the departments that have more than 10 employees.
+Question 24: Write an SQL query to find the departments that have more than 20 employees.
 ```
 SELECT department, COUNT(employee) AS num_of_employees
 FROM employees
 GROUP BY department
-HAVING num_of_employees > 10;
+HAVING num_of_employees > 20;
 
 ```
+
+
+Question 25: Write an SQL query to find the average salary of employees for each job title.
+```
+SELECT title, AVG(salary) AS avg_salary
+FROM employees
+GROUP BY title;
+
+```
+
