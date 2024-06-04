@@ -182,4 +182,10 @@ FROM employees
 GROUP BY title;
 
 ```
+Question 26: Write an SQL query to find the total number of employees in each department.
+```
+SELECT department, COUNT(*) AS total_employees
+FROM employees
+GROUP BY department;
 
+```
