@@ -189,3 +189,9 @@ FROM employees
 GROUP BY department;
 
 ```
+Question 27: Write an SQL query to find employees who have not received a bonus. Assume there's a column named bonus which can be NULL if no bonus was received.
+```
+SELECT employee_id, employee_name
+FROM employees
+WHERE bonus IS NULL;
+```
