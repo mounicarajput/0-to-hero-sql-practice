@@ -195,3 +195,10 @@ SELECT employee_id, employee_name
 FROM employees
 WHERE bonus IS NULL;
 ```
+Question 28: Write an SQL query to find employees who joined in the last 30 days. Assume there's a column named 'join_date' in the 'employees' table.
+```
+SELECT employee_id, employee_name
+FROM employees
+WHERE join_date >= CURDATE() - INTERVAL 30 DAY;
+```
+
