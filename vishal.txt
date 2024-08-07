@@ -1,7 +1,7 @@
 create database school;
 create table student(
 	rollno INT PRIMARY KEY,
-	name VARCHAR(50),age NOT NULL
+	name VARCHAR(50)
 	);
 
 select * from student;
