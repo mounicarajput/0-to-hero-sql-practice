@@ -1,0 +1,14 @@
+create database school;
+create table student(
+	rollno INT PRIMARY KEY,
+	name VARCHAR(50),age NOT NULL
+	);
+
+select * from student;
+
+INSERT INTO student
+(rollno, name)
+VALUES
+(101, 'karan'),
+(102, 'pankaj'),
+(103, 'vishal');
