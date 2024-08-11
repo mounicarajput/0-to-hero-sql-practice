@@ -155,3 +155,43 @@ WHERE (department, salary) IN (
     GROUP BY department
 );
 ```
+
+Question 23: Write an SQL query to find the top 3 highest-paid employees in the company.
+```
+SELECT employee_id, employee_name, salary
+FROM employees
+ORDER BY salary DESC
+LIMIT 3;
+
+```
+
+Question 24: Write an SQL query to find the departments that have more than 20 employees.
+```
+SELECT department, COUNT(employee) AS num_of_employees
+FROM employees
+GROUP BY department
+HAVING num_of_employees > 20;
+
+```
+
+
+Question 25: Write an SQL query to find the average salary of employees for each job title.
+```
+SELECT title, AVG(salary) AS avg_salary
+FROM employees
+GROUP BY title;
+
+```
+Question 26: Write an SQL query to find the total number of employees in each department.
+```
+SELECT department, COUNT(*) AS total_employees
+FROM employees
+GROUP BY department;
+
+```
+Question 27: Write an SQL query to find employees who have not received a bonus. Assume there's a column named bonus which can be NULL if no bonus was received.
+```
+SELECT employee_id, employee_name
+FROM employees
+WHERE bonus IS NULL;
+```
